@@ -26,8 +26,8 @@ public class HttpUtils {
         try {
             httpResponse = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
             logger.info("Received content: " + httpResponse.body().toString());
-        } catch (InterruptedException | IOException interruptedException) {
-            throw (interruptedException);
+        } catch (InterruptedException | IOException exception) {
+            throw (exception);
         }
         return httpResponse;
     }

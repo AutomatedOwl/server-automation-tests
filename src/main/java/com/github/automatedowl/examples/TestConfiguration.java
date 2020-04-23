@@ -19,6 +19,7 @@ class TestConfiguration {
 
         // Define test expected texts
         static final String ERROR_404_TEST = "message\":\"Not Found\"";
+        static final List EXPECTED_FIELDS = List.of("description", "category", "id", "title", "text");
 
         // Declare URLs and headers
         List<String> urls;

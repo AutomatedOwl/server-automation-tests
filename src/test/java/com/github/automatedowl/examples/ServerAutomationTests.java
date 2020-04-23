@@ -83,7 +83,7 @@ public class ServerAutomationTests extends ServerAutomationTestCase {
                         }
                         if (index == SECOND_INDEX_URL) {
 
-                            // Parse categories and build second URL
+                            // Verify and write fourth category
                             verifyCategory(jsonObject);
                         }
                         break;
@@ -112,8 +112,8 @@ public class ServerAutomationTests extends ServerAutomationTestCase {
 
    void iterateValuesAndWrite(JSONObject jsonObject, List<String> stringsList) {
         jsonObject.keys().forEachRemaining(key -> {
-            if (stringsList.contains(key)) {
-                writeValues(key, jsonObject.getString(key));
+            if (stringsList.contains(key) && testConfig.EXPECTED_FIELDS.contains(key)) {
+                tempJsonObject.put(key, jsonObject.getString(key));;
             }
         });
     }
@@ -136,18 +136,6 @@ public class ServerAutomationTests extends ServerAutomationTestCase {
             constructedURL = secondURL;
         } else {
             fail("Four categories were not received");
-        }
-    }
-    
-    void writeValues(String key, String value) {
-        switch (key) {
-            case "description":
-            case "category":
-            case "id":
-            case "title":
-            case "text":
-                tempJsonObject.put(key, value);
-                break;
         }
     }
 }

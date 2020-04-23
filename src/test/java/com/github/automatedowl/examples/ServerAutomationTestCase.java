@@ -20,7 +20,7 @@ public class ServerAutomationTestCase {
     TestConfiguration.Config testConfig;
 
     // Declare HTTP client
-    final HttpClient httpClient = HttpClient.newBuilder()
+    final HttpClient HTTP_CLIENT = HttpClient.newBuilder()
             .version(HttpClient.Version.HTTP_2)
             .build();
     HttpRequest request;

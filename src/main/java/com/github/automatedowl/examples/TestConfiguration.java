@@ -18,10 +18,10 @@ class TestConfiguration {
                 "https://jokes.p.rapidapi.com/jod?category=$category"));
 
         // Define test expected texts
-        public static final String ERROR_404_TEST = "message\":\"Not Found\"";
+        static final String ERROR_404_TEST = "message\":\"Not Found\"";
 
         // Declare URLs and headers
-        public List<String> urls;
+        List<String> urls;
         Map<String, String> TEST_HEADERS;
 
         private Map<String, String> JOKES_RAPIDAPI_HEADERS =  new HashMap<>() {{

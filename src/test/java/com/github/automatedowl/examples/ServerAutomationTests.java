@@ -28,7 +28,7 @@ public class ServerAutomationTests extends ServerAutomationTestCase {
         request = httpUtils.setHttpRequest(
                 testConfig.urls.get(FIRST_INDEX_URL), testConfig.TEST_HEADERS);
         logger.info("Sending HTTP request");
-        response = httpUtils.sendHttpRequest(request, httpClient);
+        response = httpUtils.sendHttpRequest(request, HTTP_CLIENT);
         logger.info("Verifying status code");
         responseHandler(response, FIRST_INDEX_URL);
     }
@@ -42,7 +42,7 @@ public class ServerAutomationTests extends ServerAutomationTestCase {
         request = httpUtils.setHttpRequest(
                 testConfig.urls.get(FIRST_INDEX_URL), testConfig.TEST_HEADERS);
         logger.info("Sending HTTP request");
-        response = httpUtils.sendHttpRequest(request, httpClient);
+        response = httpUtils.sendHttpRequest(request, HTTP_CLIENT);
         logger.info("Verifying status code");
         responseHandler(response, FIRST_INDEX_URL);
 
@@ -50,7 +50,7 @@ public class ServerAutomationTests extends ServerAutomationTestCase {
         logger.info("Setting HTTP request for second URL");
         request = httpUtils.setHttpRequest(constructedURL, testConfig.TEST_HEADERS);
         logger.info("Sending HTTP request for second URL");
-        response = httpUtils.sendHttpRequest(request, httpClient);
+        response = httpUtils.sendHttpRequest(request, HTTP_CLIENT);
         logger.info("Verifying status code");
         responseHandler(response, SECOND_INDEX_URL);
     }

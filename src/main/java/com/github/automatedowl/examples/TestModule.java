@@ -17,7 +17,6 @@ public class TestModule extends AbstractModule {
         Arrays.stream(TestConfiguration.Config.values()).forEach(config -> {
             TestConfiguration.TEST_TO_CONFIG_MAP.put(getConfigForTest(config), config);
         });
-
     }
 
     // Get config per test name
